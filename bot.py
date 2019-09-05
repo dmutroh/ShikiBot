@@ -1,7 +1,7 @@
 import telebot
 from jikanpy import Jikan
 
-bot = telebot.TeleBot("DSN")
+bot = telebot.TeleBot("674936263:AAEVPh_lLAwGkdaUKaE3q_E2gkeRjp0vvys")
 jikan = Jikan()
 
 
@@ -20,7 +20,9 @@ def search_anime(message):
     if message.text != "/search":
         title = jikan.search("anime", message.text[8:])
         title = jikan.anime(title['results'][1]['mal_id'])
-        bot.send_message(message.chat.id, title['synopsis'])
+        #bot.send_message(message.chat.id, title['synopsis'])
+        caption = "Title: " + title['title'] + "\nSynosysis: " + title['synopsis']
+        bot.send_photo(message.chat.id, title['image_url'], caption)
 
 
 bot.polling()
