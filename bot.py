@@ -2,6 +2,7 @@ import telebot
 from telebot import types
 from jikanpy import Jikan
 
+
 bot = telebot.TeleBot("674936263:AAEVPh_lLAwGkdaUKaE3q_E2gkeRjp0vvys")
 jikan = Jikan()
 
